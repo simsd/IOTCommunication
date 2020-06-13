@@ -1,6 +1,6 @@
 //NAME: Simran Dhaliwal
 //EMAIL: sdhaliwal@ucla.edu
-//ID: 905361069
+//ID: 905361068
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -296,8 +296,8 @@ int main(int argc, char ** argv){
 
 	//sending ID to server
 	char ID[20];
-	sprintf(ID, "ID=%d\n", id);
-	SSL_write(ssl, ID, 13); 
+	int id_size  = sprintf(ID, "ID=%d\n", id);
+	SSL_write(ssl, ID, id_size); 
 
 
 	//set up poll for input
